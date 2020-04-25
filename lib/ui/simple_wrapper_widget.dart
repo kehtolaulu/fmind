@@ -8,14 +8,7 @@ class SimpleWrapper extends StatelessWidget {
   SimpleWrapper(this.title, this.content);
 
   @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(title),
-      ),
-      body: Center(
-        child: content
-      ),
-    );
-  }
+  Widget build(BuildContext context) => Scaffold(
+      appBar: AppBar(title: Text(title)),
+      body: Container(padding: EdgeInsets.all(16.0), child: content));
 }

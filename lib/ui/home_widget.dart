@@ -13,12 +13,10 @@ class Home extends StatelessWidget {
   ];
 
   @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Home'),
-      ),
-      body: Articles(articles),
-    );
-  }
+  Widget build(BuildContext context) => Scaffold(
+        appBar: AppBar(
+          title: Text('Home'),
+        ),
+        body: Articles(articles),
+      );
 }

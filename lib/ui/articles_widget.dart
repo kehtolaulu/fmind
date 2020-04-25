@@ -9,9 +9,7 @@ class Articles extends StatelessWidget {
   Articles(this.articles);
 
   @override
-  Widget build(BuildContext context) {
-    return ListView.builder(
-        itemBuilder: (context, position) => ArticlePreview(articles[position]),
-        itemCount: articles.length);
-  }
+  Widget build(BuildContext context) => ListView.builder(
+      itemBuilder: (context, position) => ArticlePreview(articles[position]),
+      itemCount: articles.length);
 }
