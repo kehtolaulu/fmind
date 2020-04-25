@@ -25,10 +25,7 @@ class ArticlePreview extends StatelessWidget {
             ),
           ],
         ),
-        Divider(
-          height: 2.0,
-          color: Colors.grey,
-        )
+        Divider(height: 2.0, color: Colors.grey)
       ],
     );
   }
