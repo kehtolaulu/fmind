@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fmind/other_widget.dart';
+
 import 'home_widget.dart';
 
 void main() => runApp(App());

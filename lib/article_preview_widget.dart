@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:fmind/article.dart';
+
+import 'article.dart';
 
 class ArticlePreview extends StatelessWidget {
   Article article;
