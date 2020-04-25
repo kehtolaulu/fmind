@@ -18,12 +18,8 @@ class ArticleView extends StatelessWidget {
   Widget build(BuildContext context) => SimpleWrapper(
       article.title,
       Column(
-        children: alignLeft([title, Divider(), content]),
+        children: [title, Divider(), content],
       ));
-
-  List<Widget> alignLeft(List<Widget> widgets) => widgets
-      .map((w) => Align(alignment: Alignment.centerLeft, child: w))
-      .toList();
 
   Text get title => Text(article.title, style: titleStyle);
 
