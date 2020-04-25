@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fmind/articles_widget.dart';
 
 class Home extends StatelessWidget {
   @override
@@ -7,14 +8,7 @@ class Home extends StatelessWidget {
       appBar: AppBar(
         title: Text('Home'),
       ),
-      body: Center(
-        child: RaisedButton(
-          child: Text('Open route'),
-          onPressed: () {
-            Navigator.pushNamed(context, '/second');
-          },
-        ),
-      ),
+      body: Articles(),
     );
   }
 }
