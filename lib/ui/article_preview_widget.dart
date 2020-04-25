@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 
-import 'article.dart';
+import '../article.dart';
+import 'article_view_widget.dart';
 
 class ArticlePreview extends StatelessWidget {
-  Article article;
+  final Article article;
 
   ArticlePreview(this.article);
 
@@ -14,21 +15,12 @@ class ArticlePreview extends StatelessWidget {
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: <Widget>[
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: <Widget>[
-                title,
-                preview,
-              ],
-            ),
+            preview(context),
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: <Widget>[
-                  readTime,
-                  star,
-                ],
+                children: <Widget>[readTime, star],
               ),
             ),
           ],
@@ -41,6 +33,14 @@ class ArticlePreview extends StatelessWidget {
     );
   }
 
+  Widget preview(BuildContext context) => new GestureDetector(
+        onTap: () => ArticleView.navigate(context, article),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[title, contentPreview],
+        ),
+      );
+
   Widget get title => Padding(
         padding: const EdgeInsets.fromLTRB(12.0, 12.0, 12.0, 6.0),
         child: Text(
@@ -49,7 +49,7 @@ class ArticlePreview extends StatelessWidget {
         ),
       );
 
-  Widget get preview => Padding(
+  Widget get contentPreview => Padding(
         padding: const EdgeInsets.fromLTRB(12.0, 6.0, 12.0, 12.0),
         child: Text(
           article.preview,

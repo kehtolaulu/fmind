@@ -1,20 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
-class OtherRoute extends StatelessWidget {
+class SimpleWrapper extends StatelessWidget {
+  final String title;
+  final Widget content;
+
+  SimpleWrapper(this.title, this.content);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Other Route'),
+        title: Text(title),
       ),
       body: Center(
-        child: RaisedButton(
-          child: Text('Back'),
-          onPressed: () {
-            Navigator.pop(context);
-          },
-        ),
+        child: content
       ),
     );
   }

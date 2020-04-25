@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
+import '../article.dart';
 import 'articles_widget.dart';
-import 'article.dart';
 
 class Home extends StatelessWidget {
-  List<Article> articles = [
+  final List<Article> articles = [
     Article(
         "How to meet ladies", "How to meet ladies, how to interest them..."),
     Article("How to pump your body",

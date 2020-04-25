@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:fmind/other_widget.dart';
 
-import 'home_widget.dart';
+import 'ui/home_widget.dart';
+import 'ui/article_view_widget.dart';
 
 void main() => runApp(App());
 
@@ -14,7 +14,15 @@ class App extends StatelessWidget {
       // home: Home(),
       routes: {
         '/': (context) => Home(),
-        '/second': (context) => OtherRoute(),
+      },
+      onGenerateRoute: (settings) {
+        if (settings.name == ArticleView.routeName) {
+          return new MaterialPageRoute(
+            builder: (context) => ArticleView(settings.arguments),
+            settings: settings,
+          );
+        }
+        return new MaterialPageRoute(builder: (ctx) => Home());
       },
     );
   }
