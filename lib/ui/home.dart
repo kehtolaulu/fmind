@@ -22,7 +22,12 @@ class Home extends StatelessWidget {
     Article("How to get energy", [
       Part("Abstract", "How to gain energy from our natural stock...",
           [CheckedQuestion.yesNo("Are you tired?", "Yes")])
-    ])
+    ]),
+    Article("", []),
+    Article("", []),
+    Article("", []),
+    Article("", []),
+    Article("", []),
   ];
 
   @override

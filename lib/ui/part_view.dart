@@ -5,12 +5,23 @@ import 'tasks_views/tasks_view.dart';
 
 class PartView extends StatelessWidget {
   @override
-  Widget build(BuildContext context) => Column(
-        children: [title, Divider(), content, Divider(), TasksView(part.tasks)],
-      );
+  Widget build(BuildContext context) => Stack(children: [
+        Column(
+          children: [
+            title,
+            Divider(),
+            content,
+            Divider(),
+            TasksView(part.tasks)
+          ],
+        ),
+        new Positioned(child: pageIndicator, bottom: 10.0, right: 10.0)
+      ]);
 
   final Part part;
-  PartView(this.part);
+  final Widget pageIndicator;
+
+  PartView(this.part, {this.pageIndicator = const Text("")});
 
   Text get title => Text(part.title, style: titleStyle);
 
