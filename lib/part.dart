@@ -6,5 +6,7 @@ class Part {
   String title;
   String content;
 
-  Part(this.title, this.content);
+  List<Task> tasks;
+
+  Part(this.title, this.content, this.tasks);
 }
