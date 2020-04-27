@@ -1,12 +1,18 @@
 import 'dart:math';
 
+import 'part.dart';
+
 class Article {
   String title;
-  String content;
+  List<Part> parts;
+
+  Article(this.title, this.parts);
 
   String get preview => content.substring(0, previewLength) + "...";
 
   int get previewLength => min(firstLineLength, 30);
+
+  String get content => parts.map((p) => p.content).join("\n\n");
 
   String get readingTimeInMinutes => (content.length / 1024).toStringAsFixed(1) + "m";
 
@@ -17,6 +23,4 @@ class Article {
     }
     return newLine;
   }
-
-  Article(this.title, this.content);
 }

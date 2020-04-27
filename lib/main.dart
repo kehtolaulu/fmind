@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import 'ui/home_widget.dart';
-import 'ui/article_view_widget.dart';
+import 'ui/home.dart';
+import 'ui/article_view.dart';
 
 void main() => runApp(App());
 
@@ -18,7 +18,7 @@ class App extends StatelessWidget {
       onGenerateRoute: (settings) {
         if (settings.name == ArticleView.routeName) {
           return new MaterialPageRoute(
-            builder: (context) => ArticleView(settings.arguments),
+            builder: (context) => ArticleView.forArticle(settings.arguments),
             settings: settings,
           );
         }

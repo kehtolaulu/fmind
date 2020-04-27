@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../article.dart';
-import 'article_preview_widget.dart';
+import 'article_preview.dart';
 
 class Articles extends StatelessWidget {
   final List<Article> articles;
