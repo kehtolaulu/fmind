@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 
 import '../part.dart';
+import 'tasks_views/tasks_view.dart';
 
 class PartView extends StatelessWidget {
   @override
   Widget build(BuildContext context) => Column(
-        children: [title, Divider(), content],
+        children: [title, Divider(), content, Divider(), TasksView(part.tasks)],
       );
 
   final Part part;
