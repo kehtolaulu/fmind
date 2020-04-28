@@ -7,10 +7,11 @@ class CheckedQuestion implements Task {
   String content;
   List<String> answers;
   String correctAnswer;
+  String id;
 
-  CheckedQuestion(this.content, this.answers, this.correctAnswer);
+  CheckedQuestion(this.content, this.answers, this.correctAnswer, this.id);
 
-  CheckedQuestion.yesNo(this.content, this.correctAnswer) : answers = ["Yes", "No"];
+  CheckedQuestion.yesNo(this.content, this.correctAnswer, this.id) : answers = ["Yes", "No"];
 
   @override
   Widget present() => CheckedQuestionView(this);
