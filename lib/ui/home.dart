@@ -21,7 +21,7 @@ class Home extends StatelessWidget {
     ]),
     Article("How to get energy", [
       Part("Abstract", "How to gain energy from our natural stock...",
-          [CheckedQuestion.yesNo("Are you tired?", "Yes")])
+          [CheckedQuestion.yesNo("Are you tired?", "Yes", "1")])
     ]),
     Article("", []),
     Article("", []),

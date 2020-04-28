@@ -6,6 +6,7 @@ import 'package:fmind/ui/tasks_views/practice_view.dart';
 class Practice implements Task {
   String content;
   bool done = false;
+  String id;
 
   Practice(this.content, this.done);
 
