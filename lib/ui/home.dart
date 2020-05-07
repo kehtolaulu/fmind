@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fmind/tasks/multiple_choice_question.dart';
 
 import '../article.dart';
 import '../part.dart';
@@ -21,7 +22,8 @@ class Home extends StatelessWidget {
     ]),
     Article("How to get energy", [
       Part("Abstract", "How to gain energy from our natural stock...",
-          [CheckedQuestion.yesNo("Are you tired?", "Yes", "1")])
+          [CheckedQuestion.yesNo("Are you tired?", "Yes", "1"),
+          MultipleChoiceQuestion("2 + 2 = ?", ["4", "4.0", "5", "four"], ["4", "4.0", "four"])])
     ]),
     Article("", []),
     Article("", []),
