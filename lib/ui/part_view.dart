@@ -6,7 +6,7 @@ import 'tasks_views/tasks_view.dart';
 class PartView extends StatelessWidget {
   @override
   Widget build(BuildContext context) => Stack(children: [
-        Column(
+        ListView(
           children: [
             title,
             Divider(),
