@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fmind/tasks/multiple_choice_question.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class MultipleChoiceQuestionView extends StatefulWidget {
   final MultipleChoiceQuestion question;
@@ -20,6 +21,14 @@ class _MultipleChoiceQuestionViewState
 
   _MultipleChoiceQuestionViewState(this.question) {
     selected = [];
+    SharedPreferences.getInstance().then((prefs) {
+      if (prefs.getBool("mcq" + question.id)) {
+        setState(() {
+          state = "completed";
+          selected = question.correctAnswers;
+        });
+      }
+    });
   }
 
   @override
@@ -39,6 +48,9 @@ class _MultipleChoiceQuestionViewState
         if (selected.length == question.correctAnswers.length &&
             selected.every((a) => question.correctAnswers.contains((a)))) {
           state = "completed";
+          SharedPreferences.getInstance().then((prefs) {
+            prefs.setBool("mcq" + question.id, true);
+          });
         } else {
           state = "failed";
         }
